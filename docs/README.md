@@ -42,10 +42,10 @@ To augment the anonymized feature set, we engineered high-signal behavioral indi
 ### 3. Exploratory Data Analysis & Feature Relationships
 We analyzed linear and non-linear relationships across anonymized features to identify strong fraud indicators and remove redundant columns.
 
-![Feature Correlation Matrix](images/c-matrix.png)
+![Feature Correlation Matrix](./images/c-matrix.png)
 *Figure 1: Full feature correlation matrix illustrating relationships among anonymized V-variables and transaction attributes.*
 
-![Feature Correlation to Fraud Label](images/correlation.png)
+![Feature Correlation to Fraud Label](./images/correlation.png)
 *Figure 2: Top positive and negative feature correlations with respect to the target Fraud label (`isFraud`).*
 
 ### 4. Synthetic Data Generation Strategy
