@@ -1,7 +1,7 @@
 # Real-Time Credit Card Fraud Detection & Risk Analysis Platform
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/annikabhatia/AI4ALL_2A/blob/main/credit_card_fraud_detection_updated.ipynb)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-streamlit-app-link.streamlit.app)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PTlC2DUVh-gK9de6qvfjqOPlnNVyQitu?usp=sharing)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://2026-ai4all-2a.github.io/credit-card-fraud-detection/)
 
 An end-to-end machine learning pipeline and interactive web application built to detect real-time financial transaction fraud. Developed as part of the **AI4ALL Ignite Accelerator**, this project addresses real-world constraints such as severe class imbalance, high-dimensional anonymized features, and privacy-preserving data synthesis.
 
@@ -42,10 +42,10 @@ To augment the anonymized feature set, we engineered high-signal behavioral indi
 ### 3. Exploratory Data Analysis & Feature Relationships
 We analyzed linear and non-linear relationships across anonymized features to identify strong fraud indicators and remove redundant columns.
 
-![Feature Correlation Matrix](docs/assets/correlation_matrix_placeholder.png)
+![Feature Correlation Matrix](images/c-matrix.png)
 *Figure 1: Full feature correlation matrix illustrating relationships among anonymized V-variables and transaction attributes.*
 
-![Feature Correlation to Fraud Label](docs/assets/label_correlation_placeholder.png)
+![Feature Correlation to Fraud Label](images/correlation.png)
 *Figure 2: Top positive and negative feature correlations with respect to the target Fraud label (`isFraud`).*
 
 ### 4. Synthetic Data Generation Strategy
@@ -70,10 +70,10 @@ Given the severe class imbalance ($3.5\%$ positive class), **Accuracy** alone is
 | **XGBoost Classifier** | **98.24%** | **0.8412** | **0.9415** | Robust against overfitting; fast inference; superior precision on rare positive cases. |
 | **Deep Neural Network** | **97.85%** | **0.7930** | **0.9120** | Strong general representation, but required extensive regularization to prevent over-fitting noise. |
 
-![XGBoost Model Evaluation Results](docs/assets/xgboost_results_placeholder.png)
+![XGBoost Model Evaluation Results](images/xgb-scores.png)
 *Figure 3: Test accuracy, classification report, and confusion matrix for the trained XGBoost model.*
 
-![Neural Network Evaluation Results](docs/assets/nn_results_placeholder.png)
+![Neural Network Evaluation Results](images/nn-scores.png)
 *Figure 4: Test accuracy, classification report, and confusion matrix for the Keras Neural Network model.*
 
 ### Result Interpretation
@@ -85,6 +85,24 @@ XGBoost demonstrated superior predictive performance over the Neural Network arc
 2. **Evaluated Dual Model Architectures**: Benchmarked XGBoost against a Keras Multi-Layer Perceptron across 590,000+ transaction records.
 3. **Achieved State-of-the-Art Fraud Detection**: Selected XGBoost as the top-performing model, achieving an **F1-Score of 0.8412** and an **ROC-AUC of 0.9415**.
 4. **Deployed Interactive Streamlit Platform**: Built a web dashboard offering real-time synthetic transaction generation, custom feature tweaking, and batch risk scoring.
+
+---
+
+## 📱 Deployed Application Screenshots
+
+Below are interface highlights from the deployed **Streamlit Credit Card Fraud Detection** app, showcasing the interactive synthetic transaction generator and dynamic risk assessment models.
+
+| 1. Synthetic Generator | 2. Real-Time Risk Analysis |
+| :---: | :---: |
+| ![Screenshot 1: Synthetic Transaction Generator](images/Screenshot-1.png) | ![Screenshot 2: Real-Time Fraud Risk Prediction](images/Screenshot-2.png) |
+| *Generate and sample randomized anonymized feature profiles ($V1-V339$) and transaction metadata.* | *Instant classification confidence scoring and automated risk alert generation.* |
+
+<br>
+
+### 3. Batch Transaction Evaluator
+
+![Screenshot 3: Batch Synthetic Transaction Analysis](images/Screenshot-3.png)
+*Figure: Running batch synthetic simulations to evaluate fraud risk across multiple generated transaction profiles simultaneously.*
 
 ---
 
